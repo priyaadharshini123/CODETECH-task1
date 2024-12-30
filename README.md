@@ -3,5 +3,5 @@ NAME M.PRIYADHARSHINI.
 INTERSHIP- CODETECH IT SOLUTIONS.
 DOMAIN:CYBER ECURITY AND ETHICAL HACKING.
 DURATION: 4 WEEKS(1st Jan to 30th Jan).
-TASK NO: Number wise 2 but pdf wise 6th task.
+TASK NO: Number wise 2 but pdf wise 6th task(only for second taks).
  

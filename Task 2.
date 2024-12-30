@@ -1,0 +1,78 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+// Function to analyze smart contract bytecode for vulnerabilities
+void analyzeSmartContract(const std::string& bytecode) {
+    std::cout << "Smart Contract Audit:\n";
+    if (bytecode.find("reentrancy") != std::string::npos) {
+        std::cout << "- Reentrancy vulnerability detected!\n";
+    } else {
+        std::cout << "- No reentrancy issues found.\n";
+    }
+    if (bytecode.find("hardcoded_private_key") != std::string::npos) {
+        std::cout << "- Hardcoded private key detected!\n";
+    } else {
+        std::cout << "- No hardcoded private keys found.\n";
+    }
+    std::cout << std::endl;
+}
+
+// Function to validate a block in Proof-of-Work consensus
+bool validateBlock(int blockHash, int difficulty) {
+    return (blockHash % difficulty == 0);
+}
+
+// Function to check consensus mechanism security
+void checkConsensus(const std::vector<int>& blockchain, int difficulty) {
+    std::cout << "Consensus Mechanism Audit:\n";
+    for (const auto& block : blockchain) {
+        if (!validateBlock(block, difficulty)) {
+            std::cout << "- Block " << block << " failed validation.\n";
+        } else {
+            std::cout << "- Block " << block << " is valid.\n";
+        }
+    }
+    std::cout << std::endl;
+}
+
+// Function to scan network ports for security
+void scanNetworkPorts(const std::vector<int>& openPorts) {
+    std::cout << "Network Infrastructure Audit:\n";
+    for (int port : openPorts) {
+        if (port < 1024) {
+            std::cout << "- Alert: Insecure system port open at " << port << ".\n";
+        } else {
+            std::cout << "- Secure port open at " << port << ".\n";
+        }
+    }
+    std::cout << std::endl;
+}
+
+// Main function to simulate blockchain security audit
+int main() {
+    // Simulate smart contract bytecode (string representation)
+    std::string contractBytecode = "example_reentrancy_code hardcoded_private_key";
+
+    // Simulate blockchain blocks (hashes) for consensus validation
+    std::vector<int> blockchain = {5, 10, 15, 23}; // Example block hashes
+    int difficulty = 5;
+
+    // Simulate network ports for infrastructure audit
+    std::vector<int> networkPorts = {22, 443, 80, 30303}; // Example ports for blockchain nodes
+
+    // Perform the security audits
+    std::cout << "Starting Blockchain Security Audit...\n\n";
+    
+    // Smart Contract Audit
+    analyzeSmartContract(contractBytecode);
+
+    // Consensus Mechanism Audit
+    checkConsensus(blockchain, difficulty);
+
+    // Network Infrastructure Audit
+    scanNetworkPorts(networkPorts);
+
+    std::cout << "Blockchain Security Audit Complete.\n";
+    return 0;
+}
